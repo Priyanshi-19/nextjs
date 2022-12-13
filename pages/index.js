@@ -6,17 +6,28 @@ import { NextSeo } from "next-seo";
 
 function todoList({ items }) {
   return (
-    <div aria-labelledby="todos-wrapper" className={styles.wrapper}>
+    <div
+      aria-labelledby="todos-wrapper"
+      className={styles.wrapper}
+    >
       <NextSeo
         title="todo list"
         description="Todo list for all the task you have to do in a year"
       />
       <Head>
-        <title aria-labelledby="todos-title">Todo List</title>
+        <title aria-labelledby="todos-title" >
+          Todo List
+        </title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <h1 aria-labelledby="todos-heading">Todo List</h1>
-      <div role="tree">
+      <h1 aria-labelledby="todos-heading" >
+        Todo List
+      </h1>
+      <div
+        role="tree"
+        aria-labelledby="todos-content"
+       
+      >
         {items.map((item) => {
           return (
             <div
@@ -27,6 +38,7 @@ function todoList({ items }) {
             >
               <input
                 type="checkbox"
+                role="checkbox"
                 readOnly
                 id={item.id}
                 name={item.title}
